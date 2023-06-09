@@ -1,3 +1,23 @@
+<?php
+@include 'config.php';
+if(isset($_POST['submit'])){
+    $name = mysqli_real_escape_string($conn,$_POST['name']);
+    $email = mysqli_real_escape_string($conn,$_POST['email']);
+    $pass = md5($_POST['password']);
+    $cpass = md5($_POST['cpassword']);
+
+    $select= "SELECT * FROM user_form WHERE email = '$email' && password ='$pass'";
+
+    $result= mysqli_query($conn, $select);
+
+    if(mysqli_num_rows($result)>0){
+      $row = mysqli_fetch_array($result);
+     
+    }
+};
+
+
+?>
 <!DOCTYPE html>
 <html>
 
@@ -13,7 +33,13 @@
     <div class="form-container">
         <form action="" method="post">
             <h3>LogIn</h3>
-
+            <?php
+            if(isset($error)){
+                foreach($error as $error){
+                    echo '<span class ="error-msg">'.$error.'</span>';
+                };
+            };
+            ?>
             <input type="email" name="email" required placeholder="Enter your email id">
             <input type="password" name="password" required placeholder="Enter your password">
             <input type="submit" name="submit" value="Login" class="form-btn" href="shop.php">

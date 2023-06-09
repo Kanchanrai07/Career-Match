@@ -72,7 +72,7 @@
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 5px 10px rgba(0,0,0,.1);
-background: #C2DEDC;
+background: whitesmoke;
 text-align: center;
 }
 
@@ -90,9 +90,6 @@ text-align: center;
     background: #EEEEEE;
     border-radius: 5px;
 }
-.form-container form select option{
-    background: purple;
-}
 .form-container form .form-btn{
     background: #c1e1ec;
     color:black;
@@ -100,19 +97,24 @@ text-align: center;
     cursor: pointer;
 }
 .form-container form .form-btn:hover{
-    background: pink;
+    background: #7dafa2;
     color: aliceblue;
 }
 .form-container form p{
     margin-top: 10px;
     font-size: 20px;
-    color: beige;
+    color:black;
 }
 .form-container form p a{
-    color:#98EECC;
+    color:black;
 }
 .form-container form .error-msg{
-    
+    margin: 10px 0;
+    display: block;
+    background: violet;
+    color: red;
+    font-size: 20px;
+    padding: 10px;
 }
 
 
